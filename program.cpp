@@ -6,7 +6,7 @@
 
 TEST_CASE( "Testing the insert call in the tree", "[single-file]" )
 {
-	TrieOrPrefixTree r;
+	TrieOrPrefixTreeDS r;
 	NodeOfTrieOrPrefixTree *root = r.getRoot();
 	REQUIRE(root != nullptr);
 	
@@ -196,7 +196,7 @@ TEST_CASE( "Testing the insert call in the tree", "[single-file]" )
 
 TEST_CASE( "Testing the remove call in the tree", "[single-file]" )
 {
-	TrieOrPrefixTree r;
+	TrieOrPrefixTreeDS r;
 	NodeOfTrieOrPrefixTree *root = r.getRoot();
 	REQUIRE(root != nullptr);
 	
@@ -418,7 +418,7 @@ TEST_CASE( "Testing the remove call in the tree", "[single-file]" )
 
 TEST_CASE( "Testing the search call in the tree", "[single-file]" )
 {
-	TrieOrPrefixTree r;
+	TrieOrPrefixTreeDS r;
 	NodeOfTrieOrPrefixTree *root = r.getRoot();
 	REQUIRE(root != nullptr);
 	
@@ -435,7 +435,7 @@ TEST_CASE( "Testing the search call in the tree", "[single-file]" )
 
 TEST_CASE( "Testing the search and remove calls in the tree", "[single-file]" )
 {
-	TrieOrPrefixTree r;
+	TrieOrPrefixTreeDS r;
 	NodeOfTrieOrPrefixTree *root = r.getRoot();
 	REQUIRE(root != nullptr);
 	
