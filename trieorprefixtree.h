@@ -4,17 +4,17 @@
 #include "NodeOfTrieOrPrefixTree.h"
 
 /*!
- * \brief The TrieOrPrefixTree class
+ * \brief The TrieOrPrefixTreeDS class
  */
-class TrieOrPrefixTree
+class TrieOrPrefixTreeDS
 {
 public:
     /*!
-     * \brief TrieOrPrefixTree
+     * \brief TrieOrPrefixTreeDS
      */
-    TrieOrPrefixTree();
+    TrieOrPrefixTreeDS();
 
-    ~TrieOrPrefixTree();
+    ~TrieOrPrefixTreeDS();
 
     /*!
      * \brief insert
@@ -53,6 +53,11 @@ public:
      * \return
      */
     NodeOfTrieOrPrefixTree * getRoot();
+
+    /*!
+     * \brief clearRoot
+     */
+    void clearRoot();
 private:
     struct NodeOfTrieOrPrefixTree* root = nullptr;
 

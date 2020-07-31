@@ -5,13 +5,13 @@
 #include <sstream> //for std::stringstream
 #include <string>  //for std::string
 
-TrieOrPrefixTree::TrieOrPrefixTree()
+TrieOrPrefixTreeDS::TrieOrPrefixTreeDS()
 {
     //The root element must be keept
     this->root = new NodeOfTrieOrPrefixTree(' ', nullptr);
 }
 
-TrieOrPrefixTree::~TrieOrPrefixTree()
+TrieOrPrefixTreeDS::~TrieOrPrefixTreeDS()
 {
     if (this->root != nullptr)
     {
@@ -20,7 +20,7 @@ TrieOrPrefixTree::~TrieOrPrefixTree()
     }
 }
 
-void TrieOrPrefixTree::insert(const std::string& word)
+void TrieOrPrefixTreeDS::insert(const std::string& word)
 {
     NodeOfTrieOrPrefixTree* tmp = root;
     for (int index = 0; index < word.size(); ++index)
@@ -43,7 +43,7 @@ void TrieOrPrefixTree::insert(const std::string& word)
 
 }
 
-NodeOfTrieOrPrefixTree* TrieOrPrefixTree::search(const std::string& word)
+NodeOfTrieOrPrefixTree* TrieOrPrefixTreeDS::search(const std::string& word)
 {
     NodeOfTrieOrPrefixTree* tmp = root;
     for (int index = 0; index < word.size(); ++index)
@@ -68,9 +68,9 @@ NodeOfTrieOrPrefixTree* TrieOrPrefixTree::search(const std::string& word)
     return tmp; //retorna o ponteiro para o último nó
 }
 
-bool TrieOrPrefixTree::remove(const std::string& word)
+bool TrieOrPrefixTreeDS::remove(const std::string& word)
 {
-    NodeOfTrieOrPrefixTree* finalNode = TrieOrPrefixTree::search(word);
+    NodeOfTrieOrPrefixTree* finalNode = TrieOrPrefixTreeDS::search(word);
     if (finalNode == nullptr)
         return false;
 
@@ -94,7 +94,7 @@ bool TrieOrPrefixTree::remove(const std::string& word)
     return true;
 }
 
-void TrieOrPrefixTree::removeNodeInFather(NodeOfTrieOrPrefixTree* childToRemove)
+void TrieOrPrefixTreeDS::removeNodeInFather(NodeOfTrieOrPrefixTree* childToRemove)
 {
     NodeOfTrieOrPrefixTree* father = childToRemove->father;
     for (int index = 0; index < father->vec.size(); ++index)
@@ -108,12 +108,19 @@ void TrieOrPrefixTree::removeNodeInFather(NodeOfTrieOrPrefixTree* childToRemove)
     }
 }
 
-NodeOfTrieOrPrefixTree *TrieOrPrefixTree::getRoot()
+NodeOfTrieOrPrefixTree *TrieOrPrefixTreeDS::getRoot()
 {
     return this->root;
 }
 
-const std::string TrieOrPrefixTree::getDotFileModeOne()
+void TrieOrPrefixTreeDS::clearRoot()
+{
+    //it is not made
+    //this->root = nullptr;
+    //this->root->vec.clear();
+}
+
+const std::string TrieOrPrefixTreeDS::getDotFileModeOne()
 {
     std::string textToFile = "digraph g{";
 
@@ -159,7 +166,7 @@ std::string getNodeRepresentation(NodeOfTrieOrPrefixTree* node)
     return ret;
 }
 
-void TrieOrPrefixTree::getDotFileModeOne(NodeOfTrieOrPrefixTree* node, std::string& textToFile)
+void TrieOrPrefixTreeDS::getDotFileModeOne(NodeOfTrieOrPrefixTree* node, std::string& textToFile)
 {
     if (node != root)
         textToFile += getNodeRepresentation(node);
