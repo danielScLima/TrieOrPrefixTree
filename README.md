@@ -1,5 +1,6 @@
 TrieOrPrefixTree
 ====================
+Building with Travis: [![Build Status](https://www.travis-ci.com/danielScLima/TrieOrPrefixTree.svg?branch=master)](https://www.travis-ci.com/danielScLima/TrieOrPrefixTree)
 
 This repository has a project with the implementation of a TrieOrPrefixTree.
 
